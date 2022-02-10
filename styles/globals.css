@@ -1,16 +1,75 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.enroll__btn-after {
+  @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.enroll__btn {
+  @apply capitalize font-light mt-9 text-2xl lg:text-3xl relative px-5 py-1 mx-auto flex border-2 border-black enroll__btn-after;
 }
 
-* {
-  box-sizing: border-box;
+.slick-track {
+  display: flex !important;
 }
+
+.slick-slide {
+  height: inherit !important;
+}
+
+.title {
+  @apply xl:text-[80px] sm:text-[60px] text-[50px];
+}
+
+body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 138px;
+  bottom: 0px;
+  position: absolute;
+}
+
+.decoration-text-hero::after {
+}
+
+.slick-slide > div,
+.slick-slide > div > div {
+  height: 100% !important;
+}
+
+.slick-slide > div > div {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* .slick-active:nth-child(odd) > div > div {
+  @apply bg-primary;
+} */
+.text-border {
+  -webkit-text-stroke: 1px black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menu {
+  @apply relative w-7 h-[2px] after:w-7 after:top-2 after:bg-black after:h-[2px] after:absolute after:left-0 before:w-7 before:h-[2px] before:absolute before:left-0 before:-top-2 before:bg-black;
+}
+/* .slick-current + .slick-slide > div >div{
+  @apply bg-primary
+} */
+
+/* .slick-active  {
+  border: 2px solid red !important;
+} */
+
+
+/* @media only screen and (max-width: 1024px) and (min-width: 800px){
+  .slick-current + .slick-slide > div >div{
+    @apply bg-primary
+  }
+} */
