@@ -19,7 +19,7 @@ const Course = () => {
             eiusmod tempor incididunt ut labore et dolore magna{" "}
           </p>
         </div>
-        <button className="enroll__btn">zapisz się</button>
+        <button className="enroll__btn mt-9">zapisz się</button>
       </div>
       <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center">
         <ul className="flex flex-col justify-evenly h-full">
