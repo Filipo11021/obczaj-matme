@@ -20,7 +20,7 @@ export default async function handler(
     }
 
   const {value, error} = bodySchema.validate(JSON.parse(req.body));
- 
+
   if(error){
     res.status(404).json({ error: "validation error" });
     return
@@ -28,11 +28,13 @@ export default async function handler(
   const { email, text }: Message = JSON.parse(req.body);
 
   try {
+  
     await sendMail({
       to: process.env.GOOGLE_EMAIL as string,
       subject: "contact message",
       text: text,
     });
+  
     await sendMail({
       to: email,
       subject: "potwierdzenie wyslania wiadomosci",

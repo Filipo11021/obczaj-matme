@@ -14,7 +14,7 @@ const ContactForm = () => {
       const res = await fetch("/api/contactMessage", {
         method: "POST",
         body: JSON.stringify({
-          emaill: data.get("email"),
+          email: data.get("email"),
           text: data.get("text"),
         }),
       });
