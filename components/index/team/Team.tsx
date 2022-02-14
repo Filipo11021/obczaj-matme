@@ -46,7 +46,7 @@ const Team = () => {
         <div className="flex items-end pt-[100px] px-[5vw] lg:px-0 lg:mr-10 mb-8 lg:mb-0">
           <img src={currentTeamItem.img} alt="" className="relative bottom-0 w-full" />
         </div>
-        <div className="max-w-[700px] justify-between h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
+        <div className="max-w-[700px] justify-around h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
           <div></div>
           <div>
           <h2 className="text-[3rem]">{currentTeamItem.name}</h2>

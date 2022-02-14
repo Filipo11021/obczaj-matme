@@ -7,7 +7,7 @@ const About = () => {
   ];
   return (
     <div
-      id="course"
+      id="about"
       className="grid grid-cols-1 py-[100px] lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4"
     >
       <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center">

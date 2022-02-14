@@ -14,17 +14,17 @@ const Nav = () => {
   };
   const sections = [
     {
-      name: "about",
-      display: "o nas",
+      name: "team",
+      display: "team",
     },
+    
     {
       name: "course",
       display: "kurs",
     },
-
     {
-      name: "team",
-      display: "team",
+      name: "about",
+      display: "o nas",
     },
     {
       name: "testimonials",
