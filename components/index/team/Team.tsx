@@ -7,7 +7,7 @@ type TeamType = {
 
 const teamData:TeamType[] = [
   {
-    name: 'jan kowalski',
+    name: 'Jan Kowalski',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -18,7 +18,7 @@ const teamData:TeamType[] = [
     img: 'team-1.png'
   },
   {
-    name: 'jan kowalski 2',
+    name: 'Zbyszek Kowalski',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -42,15 +42,18 @@ const Team = () => {
           </span>
         ))}
       </div>
-      <div className="grid lg:grid-cols-2 grid-cols-1 h-full">
-        <div className="flex items-end pt-[150px]">
+      <div className="grid lg:grid-cols-2 grid-cols-1 h-full min-h-screen">
+        <div className="flex items-end pt-[100px] px-[5vw] lg:px-0 lg:mr-10 mb-8 lg:mb-0">
           <img src={currentTeamItem.img} alt="" className="relative bottom-0 w-full" />
         </div>
-        <div className="max-w-[700px] m-auto px-3 py-5">
-          <h2 className="text-[2rem]">{currentTeamItem.name}</h2>
-          <p className="mt-2 mb-10">{currentTeamItem.description}
+        <div className="max-w-[700px] justify-between h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
+          <div></div>
+          <div>
+          <h2 className="text-[3rem]">{currentTeamItem.name}</h2>
+          <p className="mt-2 mb-10 text- md:text-2xl">{currentTeamItem.description}
           </p>
-          <div className="flex">
+          </div>
+          <div className="flex items-end mb-10  lg:mb-0">
             {team.map((e,index) => (
               <button key={index} onClick={() => setCurrentTeamItem(e)} >
                 <img className="w-[5rem] mx-4" src={e.img} alt="" />

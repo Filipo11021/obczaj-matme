@@ -6,6 +6,7 @@ import Team from '../components/index/team/Team'
 import Contact from '../components/index/contact/Contact'
 import Modal from '../components/Modal'
 import { useState } from 'react'
+import About from 'components/index/about/About'
 
 const Home: NextPage = () => {
   const [isOpen,setIsOpen] = useState(false)
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
       <Hero />
       <Team />
       <Course />
-      {/* about */}
+      <About />
       <Testimonials />
       <Contact />
       {isOpen && <Modal setIsOpen={setIsOpen} />}

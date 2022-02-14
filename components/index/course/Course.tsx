@@ -6,7 +6,7 @@ const Course = () => {
     "giga koks like",
   ];
   return (
-    <div id="course" className="grid grid-cols-1 lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[10vw] mx-4">
+    <div id="course" className="grid py-[100px] grid-cols-1 lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4">
       <div className="m-auto">
         <h2 className="text-[3rem] mb-10 sm:text-[4rem] md:text-[6rem] leading-[105%]">KURS <br /> 8-KLASISTY</h2>
         <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[600px] text-center">
