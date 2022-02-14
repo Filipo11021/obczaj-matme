@@ -14,24 +14,25 @@ const Nav = () => {
   };
   const sections = [
     {
-      name: "course",
-      display: "kurs",
-    },
-    {
       name: "about",
       display: "o nas",
     },
+    {
+      name: "course",
+      display: "kurs",
+    },
+
     {
       name: "team",
       display: "team",
     },
     {
-      name: "contact",
-      display: "kontakt",
-    },
-    {
       name: "testimonials",
       display: "opinie",
+    },
+    {
+      name: "contact",
+      display: "kontakt",
     },
   ];
   const btn = "mx-2 inline-block text-2xl uppercase relative font-light";

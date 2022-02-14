@@ -67,9 +67,16 @@ html {
   border: 2px solid red !important;
 } */
 
-
 /* @media only screen and (max-width: 1024px) and (min-width: 800px){
   .slick-current + .slick-slide > div >div{
     @apply bg-primary
   }
 } */
+
+.slick-current + .slick-slide > div > div {
+  @apply md:bg-primary;
+}
+
+.slick-slide > div >div {
+  @apply bg-grey
+}
