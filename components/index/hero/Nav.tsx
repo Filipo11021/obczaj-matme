@@ -39,7 +39,7 @@ const Nav = () => {
   const after =
     "after:w-full after:h-[2px] after:bg-black after:absolute after:left-0 after:bottom-0 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500";
   return (
-    <nav className="flex justify-between mx-5 pt-7 items-center">
+    <nav className="flex min-h-[100px] h-full justify-between mx-5 pt-7 items-center">
       <img src="/logo.png" alt="logo" />
       <ul className="hidden md:block">
         {sections.map((section, index) => (
