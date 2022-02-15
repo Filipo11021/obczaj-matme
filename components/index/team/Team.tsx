@@ -44,10 +44,14 @@ const Team = () => {
         ))}
       </div>
       <div className="grid lg:grid-cols-2 grid-cols-1 h-full min-h-screen">
-        <div className="flex items-end pt-[100px] px-[5vw] lg:px-0 lg:mr-10 mb-8 lg:mb-0">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+          className="flex items-end pt-[100px] px-[5vw] lg:px-0 lg:mr-10 mb-8 lg:mb-0"
+          data-aos-anchor-placement="top-center"
+        >
           <img
-            data-aos="fade-right"
-            data-aos-duration="1000"
             src={currentTeamItem.img}
             alt=""
             className="relative bottom-0 w-full"
@@ -55,10 +59,7 @@ const Team = () => {
         </div>
         <div className="max-w-[700px] justify-around h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
           <div></div>
-          <div
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          >
+          <div data-aos="fade-left" data-aos-duration="1000">
             <h2 className="text-[3rem]">{currentTeamItem.name}</h2>
             <p className="mt-2 mb-10 text- md:text-2xl">
               {currentTeamItem.description}

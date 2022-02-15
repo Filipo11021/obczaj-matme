@@ -22,7 +22,7 @@ const About = () => {
       </div>
       <div className="m-auto">
         <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[105%] text-right">
-          ZAJECJA <br /> INDIWIDUALNE
+          ZAJECJA <br /> <div className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-5 after:top-0 after:h-full after:w-[105%]">INDIWIDUALNE</div>
         </h2>
         <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[600px] text-center">
           <p className="mb-6">

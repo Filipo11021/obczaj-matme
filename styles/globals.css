@@ -18,6 +18,10 @@ body, html{
   overflow-x: hidden;
 }
 
+.figure::after{
+  clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
 
 
 .lazy-div {

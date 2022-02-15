@@ -40,7 +40,7 @@ const Testimonials = () => {
   };
   return (
     <div className="overflow-x-hidden py-[100px]" id="testimonials">
-      <h2 className="text-[5rem] mb-10 text-center">OPINIE</h2>
+      <h2 className="text-[5rem] mb-10 text-center leading-none">O<span className="relative after:h-1/2 after:-z-10 after:w-[105%] after:absolute after:left-3 after:top-[40%] after:bg-secondary">PINIE</span></h2>
       <Slider {...settings}>
         {data.map((e, index) => (
           <div
