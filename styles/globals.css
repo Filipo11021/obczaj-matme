@@ -14,9 +14,11 @@
 .slick-track {
   display: flex !important;
 }
-body{
+body, #hero, #team{
   overflow-x: hidden;
 }
+
+
 
 .lazy-div {
   /* height: 50vh; */

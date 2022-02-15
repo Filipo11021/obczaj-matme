@@ -32,7 +32,7 @@ const Team = () => {
   const [currentTeamItem, setCurrentTeamItem] = useState<TeamType>(teamData[0])
 
   return (
-    <div className="bg-secondary relative"id="team">
+    <div  className="bg-secondary relative"id="team">
       <div className="absolute hidden top-0 left-0 lg:flex flex-col h-full overflow-y-hidden">
         {[...Array(20)].map((_, index) => (
           <span
