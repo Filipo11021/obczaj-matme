@@ -14,7 +14,9 @@
 .slick-track {
   display: flex !important;
 }
-
+body{
+  overflow-x: hidden;
+}
 
 .lazy-div {
   /* height: 50vh; */
