@@ -29,8 +29,9 @@ const Hero = () => {
           </h1>
 
           <button
-         
-            className={`enroll__btn mt-9`}
+         data-aos="fade-right"
+         data-aos-duration="600"
+            className={`enroll__btn `}
           >
             zapisz się
           </button>
