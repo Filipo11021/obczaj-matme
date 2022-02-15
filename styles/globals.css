@@ -14,7 +14,7 @@
 .slick-track {
   display: flex !important;
 }
-body, #hero, #team{
+body, html{
   overflow-x: hidden;
 }
 
