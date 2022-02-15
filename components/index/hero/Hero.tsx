@@ -13,7 +13,7 @@ const Hero = () => {
       <Nav />
       <div className="flex justify-center items-center flex-grow">
         <div className="max-w-[1123px] px-2 mb-[7rem]">
-          <h1 className="uppercase font-light xl:text-[6rem] md:text-[4rem] text-[2.4rem] text-center">
+          <h1 data-aos='fade-left' className="uppercase font-light xl:text-[6rem] md:text-[4rem] text-[2.4rem] text-center">
             <span className="font-medium">matma</span> jeszcze nigdy nie była{" "}
             <span className="relative">
               <span className="font-medium whitespace-nowrap">tak prosta</span>
@@ -23,7 +23,7 @@ const Hero = () => {
               ></img>
             </span>
           </h1>
-          <button className={`${btn} ${after}`}>zapisz się</button>
+          <button data-aos='fade-right' className={`${btn} ${after}`}>zapisz się</button>
         </div>
       </div>
     </div>

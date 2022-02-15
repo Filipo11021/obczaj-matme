@@ -15,6 +15,18 @@
   display: flex !important;
 }
 
+
+.lazy-div {
+  /* height: 50vh; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+}
+
+
 .slick-slide {
   height: inherit !important;
 }

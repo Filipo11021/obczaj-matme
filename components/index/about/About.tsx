@@ -21,7 +21,7 @@ const About = () => {
         </ul>
       </div>
       <div className="m-auto">
-        <h2 className="text-[3rem] mb-10 sm:text-[4rem] md:text-[6rem] leading-[105%] text-right">
+        <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[105%] text-right">
           ZAJECJA <br /> INDIWIDUALNE
         </h2>
         <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[600px] text-center">

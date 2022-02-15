@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 type TeamType = {
   name: string;
   img: string;
@@ -44,11 +45,11 @@ const Team = () => {
       </div>
       <div className="grid lg:grid-cols-2 grid-cols-1 h-full min-h-screen">
         <div className="flex items-end pt-[100px] px-[5vw] lg:px-0 lg:mr-10 mb-8 lg:mb-0">
-          <img src={currentTeamItem.img} alt="" className="relative bottom-0 w-full" />
+          <img data-aos='fade-right' src={currentTeamItem.img} alt="" className="relative bottom-0 w-full" />
         </div>
         <div className="max-w-[700px] justify-around h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
           <div></div>
-          <div>
+          <div data-aos='fade-left'>
           <h2 className="text-[3rem]">{currentTeamItem.name}</h2>
           <p className="mt-2 mb-10 text- md:text-2xl">{currentTeamItem.description}
           </p>
