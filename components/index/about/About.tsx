@@ -8,9 +8,9 @@ const About = () => {
   return (
     <div
       id="about"
-      className="grid grid-cols-1 py-[100px] lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4"
+      className="grid relative  grid-cols-1 py-[100px] lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4"
     >
-      <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center">
+      <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center relative">
         <ul className="flex flex-col justify-evenly h-full">
           {foo.map((e, index) => (
             <li key={index} className="flex items-center mb-12">
@@ -22,7 +22,7 @@ const About = () => {
       </div>
       <div className="m-auto">
         <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[105%] text-right">
-          ZAJECJA <br /> <div className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-5 after:top-0 after:h-full after:w-[105%]">INDIWIDUALNE</div>
+          Zajęcia <br /> <span className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-full after:w-[115%]">indiwidualne</span>
         </h2>
         <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[600px] text-center">
           <p className="mb-6">

@@ -7,6 +7,22 @@
   @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
 }
 
+.main__btn-base{
+  @apply capitalize font-light text-2xl lg:text-3xl relative px-5 py-1 mx-auto flex border-2 border-black
+}
+
+.main__btn-decoration{
+  @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
+}
+
+.main__btn-decoration--base{
+  @apply w-full h-full absolute left-[.35rem] top-[.4rem] bg-secondary -z-10 opacity-0 after:transition-opacity after:duration-500;
+}
+
+.main__btn{
+  @apply main__btn-base main__btn-decoration
+}
+
 .enroll__btn {
   @apply capitalize font-light text-2xl lg:text-3xl relative px-5 py-1 mx-auto flex border-2 border-black enroll__btn-after;
 }
@@ -24,6 +40,7 @@ body, html{
 
 
 
+
 .lazy-div {
   /* height: 50vh; */
   display: flex;
@@ -37,6 +54,10 @@ body, html{
 
 .slick-slide {
   height: inherit !important;
+}
+
+.slick-list{
+  padding-top: 60px !important;
 }
 
 .title {
@@ -94,8 +115,10 @@ html {
 } */
 
 .slick-current + .slick-slide > div > div {
-  @apply md:bg-primary;
+  @apply md:bg-primary md:scale-110 relative z-10 -translate-y-10;
 }
+
+
 
 .slick-slide > div >div {
   @apply bg-grey

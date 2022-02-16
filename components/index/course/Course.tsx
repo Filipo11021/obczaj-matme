@@ -12,7 +12,7 @@ const Course = () => {
     >
       <div className="m-auto">
         <h2 className="text-[3rem] mb-10 sm:text-[4rem] md:text-[6rem] leading-[105%]">
-          KURS <br /> 8-<span className="relative after:h-[50%] after:w-[90%] after:absolute after:block after:right-0 after:top-1/2 after:-z-10 after:bg-secondary">KLASISTY</span>
+          kurs <br /> ósmo<span className="relative after:h-[50%] after:w-[90%] after:absolute after:block after:right-0 after:top-1/2 after:-z-10 after:bg-secondary">klasisty</span>
         </h2>
         <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[600px] text-center">
           <p className="mb-6">

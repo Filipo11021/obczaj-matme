@@ -32,7 +32,7 @@ const Team = () => {
   const [currentTeamItem, setCurrentTeamItem] = useState<TeamType>(teamData[0]);
 
   return (
-    <div className="bg-secondary relative" id="team">
+    <div className="bg-secondary test:(u-5) relative" id="team">
       <div className="absolute hidden top-0 left-0 lg:flex flex-col h-full overflow-y-hidden">
         {[...Array(20)].map((_, index) => (
           <span
@@ -68,7 +68,7 @@ const Team = () => {
           <div className="flex items-end mb-10  lg:mb-0">
             {team.map((e, index) => (
               <button key={index} onClick={() => setCurrentTeamItem(e)}>
-                <img className="w-[5rem] mx-4" src={e.img} alt="" />
+                <img className="w-[110px] mx-4" src={e.img} alt="" />
               </button>
             ))}
           </div>

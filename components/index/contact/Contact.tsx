@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="py-[100px] md:flex  md:mx-8 lg:mx-[10vw] mx-4" id="contact">
       <div className="mb-8 md:pr-6 flex-1">
-        <h2 className="title relative after:w-2/3 after:h-1/2 inline after:bg-secondary after:absolute after:top-1/2 after:-z-10 after:right-0">
+        <h2 className="title font-light relative after:w-2/3 after:h-1/2 inline after:bg-secondary after:absolute after:top-1/2 after:-z-10 after:right-0">
           KONTAKT
         </h2>
         <p className="text-lg">

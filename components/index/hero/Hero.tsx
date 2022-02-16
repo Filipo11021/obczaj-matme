@@ -28,13 +28,15 @@ const Hero = () => {
             </span>
           </h1>
 
-          <button
-         data-aos="fade-right"
-         data-aos-duration="600"
-            className={`enroll__btn `}
-          >
-            zapisz się
-          </button>
+          <div className="flex mx-auto">
+            <div
+              className="inline-block mx-auto relative mt-9 main__btn-base`"
+              data-aos="fade-right"
+              data-aos-duration="600"
+            >
+              <button className={`main__btn`}>zapisz się</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
