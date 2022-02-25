@@ -3,43 +3,45 @@
 @tailwind components;
 @tailwind utilities;
 
-.enroll__btn-after {
-  @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
+.main__btn-base {
+  @apply capitalize font-light text-2xl relative px-5 py-1 flex border-2 border-black;
 }
 
-.main__btn-base{
-  @apply capitalize font-light text-2xl lg:text-3xl relative px-5 py-1 mx-auto flex border-2 border-black
+.main__btn-decoration {
+  @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-decoration-1 after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
 }
 
-.main__btn-decoration{
-  @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
+.enroll__form__title {
+  @apply text-[40px] sm:text-[50px] font-bold;
 }
 
-.main__btn-decoration--base{
-  @apply w-full h-full absolute left-[.35rem] top-[.4rem] bg-secondary -z-10 opacity-0 after:transition-opacity after:duration-500;
+.enroll__form__description {
+  @apply text-[20px] sm:text-[25px] font-light;
 }
 
-.main__btn{
-  @apply main__btn-base main__btn-decoration
+.main__btn-decoration--base {
+  @apply w-full h-full absolute left-[.35rem] top-[.4rem] bg-decoration-1 -z-10 opacity-0 after:transition-opacity after:duration-500;
+}
+
+.main__btn {
+  @apply main__btn-base main__btn-decoration;
 }
 
 .enroll__btn {
-  @apply capitalize font-light text-2xl lg:text-3xl relative px-5 py-1 mx-auto flex border-2 border-black enroll__btn-after;
+  @apply capitalize font-light text-[25px] lg:text-[40px] relative px-5 py-1 mx-auto flex border-2 border-black main__btn-decoration;
 }
 
 .slick-track {
   display: flex !important;
 }
-body, html{
+body,
+html {
   overflow-x: hidden;
 }
 
-.figure::after{
-  clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
+.figure::after {
+  clip-path: polygon(40px 0, 100% 0, 100% 100%, 0% 100%);
 }
-
-
-
 
 .lazy-div {
   /* height: 50vh; */
@@ -51,17 +53,16 @@ body, html{
   padding: 20px;
 }
 
-
 .slick-slide {
   height: inherit !important;
 }
 
-.slick-list{
-  padding-top: 60px !important;
+.slick-list {
+  padding-top: 70px !important;
 }
 
 .title {
-  @apply xl:text-[80px] sm:text-[60px] text-[50px];
+  @apply xl:text-[60px] sm:text-[50px] text-[50px];
 }
 
 body::before {
@@ -73,8 +74,6 @@ body::before {
   position: absolute;
 }
 
-.decoration-text-hero::after {
-}
 
 .slick-slide > div,
 .slick-slide > div > div {
@@ -115,11 +114,33 @@ html {
 } */
 
 .slick-current + .slick-slide > div > div {
-  @apply md:bg-primary md:scale-110 relative z-10 -translate-y-10;
+  @apply lg:bg-testimonials-card lg:scale-110 relative z-10 -translate-y-10;
 }
 
+.slick-slide > div > div {
+  @apply bg-grey;
+}
 
+.course-trapezoid {
+  clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
+  @apply absolute top-1/2 -translate-y-1/2 h-[80%] bg-secondary w-0 md:w-5 lg:w-[4vh] left-0 !important;
+}
 
-.slick-slide > div >div {
-  @apply bg-grey
+.about-trapezoid{
+  clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0% 100%);
+  @apply absolute bottom-1 left-0 w-[40%] h-[70px] bg-decoration-2 hidden lg:block;
+}
+
+.zoomIn{
+  animation: zoomIn 2s;
+  transition: 2s;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }

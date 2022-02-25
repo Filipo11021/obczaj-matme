@@ -19,6 +19,7 @@ const ContactForm = () => {
         }),
       });
       const {error} = await res.json()
+      console.log(error)
       if(error){
         setInfo("error");
       }else{
@@ -27,6 +28,7 @@ const ContactForm = () => {
       console.log(error)
       
     } catch (error) {
+      console.log(error)
       setInfo("error");
     }
   };
@@ -54,7 +56,7 @@ const ContactForm = () => {
         ></textarea>
       </div>
       <p>{info}</p>
-      <button type="submit" className="enroll__btn mt-3">
+      <button type="submit" className="main__btn mt-3 mx-auto">
         Wyślij
       </button>
     </form>

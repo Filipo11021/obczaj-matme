@@ -1,38 +1,16 @@
+import { GetStaticProps } from "next";
 import { useState } from "react";
+import { TeamItem } from "types/team";
 
-type TeamType = {
-  name: string;
-  img: string;
-  description: string;
-};
+type Props = {
+  teamItems: TeamItem[];
+}
 
-const teamData: TeamType[] = [
-  {
-    name: "Jan Kowalski",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat. Duis aute irure dolor in
-    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum`,
-    img: "team-1.png",
-  },
-  {
-    name: "Zbyszek Kowalski",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat. Duis aute irure dolor`,
-    img: "team-2.png",
-  },
-];
-const Team = () => {
-  const [team, setTeam] = useState<TeamType[]>(teamData);
-  const [currentTeamItem, setCurrentTeamItem] = useState<TeamType>(teamData[0]);
+const Team = ({teamItems}:Props) => {
+  const [currentTeamItem, setCurrentTeamItem] = useState<TeamItem>(teamItems[0]);
 
   return (
-    <div className="bg-secondary test:(u-5) relative" id="team">
+    <div className="bg-decoration-1 test:(u-5) relative" id="team">
       <div className="absolute hidden top-0 left-0 lg:flex flex-col h-full overflow-y-hidden">
         {[...Array(20)].map((_, index) => (
           <span
@@ -52,7 +30,7 @@ const Team = () => {
           data-aos-anchor-placement="top-center"
         >
           <img
-            src={currentTeamItem.img}
+            src={currentTeamItem.image.url}
             alt=""
             className="relative bottom-0 w-full"
           />
@@ -60,15 +38,15 @@ const Team = () => {
         <div className="max-w-[700px] justify-around h-full flex-1 flex flex-col m-auto px-3 pl-5 text-center lg:pr-[5vw]">
           <div></div>
           <div data-aos="fade-left" data-aos-duration="1000">
-            <h2 className="text-[3rem]">{currentTeamItem.name}</h2>
+            <h2 className="text-[3rem] font-semibold">{currentTeamItem.name}</h2>
             <p className="mt-2 mb-10 text- md:text-2xl">
               {currentTeamItem.description}
             </p>
           </div>
           <div className="flex items-end mb-10  lg:mb-0">
-            {team.map((e, index) => (
+            {teamItems && teamItems.map((e, index) => (
               <button key={index} onClick={() => setCurrentTeamItem(e)}>
-                <img className="w-[110px] mx-4" src={e.img} alt="" />
+                <img className="w-[110px] mx-4" src={e.image.url} alt="" />
               </button>
             ))}
           </div>
@@ -79,3 +57,4 @@ const Team = () => {
 };
 
 export default Team;
+

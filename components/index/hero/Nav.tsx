@@ -6,9 +6,9 @@ const Nav = () => {
   const menuHandler = () => {
     const html = document.querySelector<HTMLElement>("html")!;
     if (!isOpen) {
-      html.style.overflow = "hidden";
+      html.style.overflowY = "hidden";
     } else {
-      html.style.overflow = "initial";
+      html.style.overflowY = "initial";
     }
     setIsOpen((e) => !e);
   };
@@ -41,15 +41,15 @@ const Nav = () => {
   return (
     <nav className="flex min-h-[100px] h-full justify-between mx-5 pt-7 items-center">
       <img src="/logo1.png" alt="logo" />
-      <ul className="hidden md:block">
+      <ul className="hidden lg:block">
         {sections.map((section, index) => (
           <a key={index} href={`#${section.name}`}>
-            <li className={`${btn} ${after}`}>{section.display}</li>
+            <li className={`${btn} ${after} ml-[50px]`}>{section.display}</li>
           </a>
         ))}
       </ul>
       <ul
-        className={`fixed top-0 scroll-m-0 w-screen h-screen z-20 bg-white flex flex-col transition-all items-center justify-center md:-left-[150%] ${
+        className={`fixed top-0 scroll-m-0 w-screen h-screen z-20 bg-white flex flex-col transition-all items-center justify-center lg:-left-[150%] ${
           isOpen ? "left-0" : "-left-[150%]"
         }`}
       >
@@ -68,7 +68,7 @@ const Nav = () => {
           </a>
         ))}
       </ul>
-      <button className={`p-4 relative z-50 md:hidden`} onClick={menuHandler}>
+      <button className={`p-4 relative z-30 lg:hidden`} onClick={menuHandler}>
         <div
           className={`menu after:transition-all before:transition-all ${
             isOpen

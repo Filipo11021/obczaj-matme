@@ -7,8 +7,8 @@ type Message = {
   text: string;
 };
 const bodySchema = Joi.object({
-  email: Joi.string().email({}),
-  text: Joi.string(),
+  email: Joi.string().email({}).required(),
+  text: Joi.string().required(),
 });
 export default async function handler(
   req: NextApiRequest,
@@ -30,20 +30,21 @@ export default async function handler(
   try {
   
     await sendMail({
-      to: process.env.GOOGLE_EMAIL as string,
-      subject: "contact message",
+      to: process.env.EMAIL_USER as string,
+      subject: `kontakt ${email}`,
       text: text,
     });
   
     await sendMail({
       to: email,
       subject: "potwierdzenie wyslania wiadomosci",
-      text: "twoja wiadomosc kontaktowa zostala wyslana",
+      html: `<h2>Twoja wiadomość kontaktowa została wysłana</h2>`,
     });
 
     res.json({ sent: "true" });
     return
   } catch (error) {
+    console.log(error)
     res.status(404).json({ error: "error" });
     return
   }
