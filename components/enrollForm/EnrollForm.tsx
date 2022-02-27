@@ -189,7 +189,7 @@ const Step1 = ({
         <div>
           <button
             className={`enroll__btn w-full my-12 justify-center ${
-              option === "kurs" && "bg-primary"
+              option === "kurs" && "bg-decoration-1"
             }`}
             onClick={() => handleInputData("option", "kurs")}
           >
@@ -197,7 +197,7 @@ const Step1 = ({
           </button>
           <button
             className={`enroll__btn w-full my-12 justify-center ${
-              option === "lekcje" && "bg-primary"
+              option === "lekcje" && "bg-decoration-1"
             }`}
             onClick={() => handleInputData("option", "lekcje")}
           >

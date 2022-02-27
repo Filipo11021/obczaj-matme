@@ -127,7 +127,7 @@ html {
 
 .about-trapezoid {
   clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0% 100%);
-  @apply absolute bottom-1 left-0 w-[40%] h-[70px] bg-decoration-2 hidden lg:block;
+  @apply absolute bottom-1 left-0 w-[40%] h-[70px] bg-decoration-1 hidden lg:block;
 }
 
 .zoomIn {
