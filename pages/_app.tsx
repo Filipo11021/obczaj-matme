@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>obczaj matme</title>
+        <title>Obczaj Matme - kursy i korepetycje z matematyki</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
         <meta
           name="description"
