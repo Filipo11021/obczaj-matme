@@ -23,7 +23,7 @@ export default async function handler(
   const {value, error} = bodySchema.validate(JSON.parse(req.body));
 
   if(error){
-    res.status(404).json({ error: "wprowadź prawidłowe dane" });
+    res.status(404).json({ error: "Wprowadź prawidłowe dane" });
     return
   }
   const { email, text }: Message = JSON.parse(req.body);
@@ -46,7 +46,7 @@ export default async function handler(
     return
   } catch (error) {
     console.log(error)
-    res.status(404).json({ error: `podczas wysyłania nastąpił nieznany błąd, spróbuj ponownie lub napisz maila na adres ${process.env.EMAIL_USER}` });
+    res.status(404).json({ error: `Podczas wysyłania nastąpił nieznany błąd, spróbuj ponownie lub napisz maila na adres ${process.env.EMAIL_USER}` });
     return
   }
 }

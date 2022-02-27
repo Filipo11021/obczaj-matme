@@ -15,7 +15,6 @@ export async function sendMail({
   text,
   html,
 }: Mail) {
-  console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
   const transport = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: 465,
@@ -32,7 +31,6 @@ export async function sendMail({
     subject,
     [html ? "html" : "text"]: html ? html : text,
   };
-console.log(mailOptions)
   const result = await transport.sendMail(mailOptions);
   return result;
 }

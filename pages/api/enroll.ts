@@ -24,7 +24,7 @@ export default async function handler(
   const { error, value } = bodySchema.validate(JSON.parse(req.body));
  console.log(error)
   if (error) {
-    res.status(404).json({ error: "wprowadź prawidłowe dane" });
+    res.status(404).json({ error: "Wprowadź prawidłowe dane" });
     return;
   }
   

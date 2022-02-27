@@ -6,7 +6,7 @@ const ContactForm = () => {
 
   const submitHandler = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setInfo("wysylanie...");
+    setInfo("Wysyłanie...");
     const data = new FormData(form.current as HTMLFormElement);
 
     console.log(data.get("email"));
@@ -23,7 +23,7 @@ const ContactForm = () => {
       if(error){
         setInfo(error);
       }else{
-        setInfo("wiadomość została wysłana");
+        setInfo("Wiadomość została wysłana");
       }
       console.log(error)
       

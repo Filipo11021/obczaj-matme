@@ -229,7 +229,7 @@ const Step2 = ({
   const fields = [
     {
       name: "firstName",
-      display: "Imie",
+      display: "Imię",
       value: firstName,
     },
     {
