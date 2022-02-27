@@ -25,6 +25,7 @@ const Hero = () => {
             <span className="relative">
               <span className="font-medium whitespace-nowrap">tak prosta</span>
               <img
+              aria-hidden='true'
                 src="vector.png"
                 className="absolute top-0 left-0 h-full w-[105%] -z-10 scale-[1.1]"
               ></img>

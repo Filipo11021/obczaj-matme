@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { sendMail } from "lib/sendMail";
 import Joi from "joi";
+import { confirmation } from "config/confirmationTemplate";
 
 type Message = {
   email: string;
@@ -22,7 +23,7 @@ export default async function handler(
   const {value, error} = bodySchema.validate(JSON.parse(req.body));
 
   if(error){
-    res.status(404).json({ error: "validation error" });
+    res.status(404).json({ error: "wprowadź prawidłowe dane" });
     return
   }
   const { email, text }: Message = JSON.parse(req.body);
@@ -37,15 +38,15 @@ export default async function handler(
   
     await sendMail({
       to: email,
-      subject: "potwierdzenie wyslania wiadomosci",
-      html: `<h2>Twoja wiadomość kontaktowa została wysłana</h2>`,
+      subject: "Dziękujemy za kontakt",
+      html: confirmation,
     });
 
     res.json({ sent: "true" });
     return
   } catch (error) {
     console.log(error)
-    res.status(404).json({ error: "error" });
+    res.status(404).json({ error: `podczas wysyłania nastąpił nieznany błąd, spróbuj ponownie lub napisz maila na adres ${process.env.EMAIL_USER}` });
     return
   }
 }

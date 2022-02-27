@@ -5,14 +5,26 @@ const Contact = () => {
     <div className="py-[100px] md:flex  md:mx-8 lg:mx-[10vw] mx-4" id="contact">
       <div className="mb-8 md:pr-6 flex-1">
         <h2 className="title font-normal relative ">
-          K<span className="relative after:w-full after:h-1/2 inline after:bg-secondary after:absolute after:top-1/2 after:-z-10 after:left-5">ONTAKT</span>
+          K
+          <span className="relative after:w-full after:h-1/2 inline after:bg-secondary after:absolute after:top-1/2 after:-z-10 after:left-5">
+            ONTAKT
+          </span>
         </h2>
         <p className="text-lg">
           Możesz nas spotkać w różnych social mediach, albo skontaktować się za
           pomocą maila.
         </p>
         <div className="flex mt-5">
-          <a href="" target="_blank" rel="noopener noreferrer" className="m-5 hover:text-primary transition-colors">
+          <a
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-delay="200"
+            href="https://www.instagram.com/obczaj.matme/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="instagram link"
+            className="m-5 hover:text-primary transition-colors"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -24,7 +36,15 @@ const Contact = () => {
             </svg>
           </a>
 
-          <a href="" target="_blank" rel="noopener noreferrer" className="m-5 hover:text-primary transition-colors">
+          <a
+            data-aos="fade-right"
+            data-aos-duration="600"
+            href="https://www.facebook.com/obczajmatme"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="facebook link"
+            className="m-5 hover:text-primary transition-colors"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"

@@ -8,10 +8,10 @@ type GoogleFormConfig = {
 }
 
 export const formConfig:GoogleFormConfig = {
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLScvEOZ4mO6qGyWq0mZ2xS_95jONDuTNsGoBCenu5Ig5WrTgqQ/formResponse',
-    firstName: 'entry.430755835',
-    lastName: 'entry.894065781',
-    email: 'entry.770264289',
-    questions: 'entry.223087197',
-    option: 'entry.1811720537'
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLSd2GrNVbossrAG5mae4-u2qWRjfD2lrulyM5mj8XfRESB5y7w/formResponse',
+    firstName: 'entry.937932394',
+    lastName: 'entry.1311423817',
+    email: 'entry.1743535783',
+    questions: 'entry.1630485934',
+    option: 'entry.684026931'
 }

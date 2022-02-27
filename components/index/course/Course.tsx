@@ -3,10 +3,11 @@ import { useContext } from "react";
 
 const Course = () => {
   const foo = [
-    "kompleksowe przygotowanie do egzaminu",
-    "przystepna cena",
-    "niewielkie grupy MAX. 12 osób",
-    "wyjatkowy prowadzacy",
+    "Kompleksowe przygotowanie do egzaminu",
+    "21 godzin zajęć pełnych wiedzy",
+    "Przystępna cena 25zł za godzinę zajęć",
+    "Niewielkie grupy max. 12 osób",
+    "Wyjątkowy prowadzący",
   ];
   const { setEnrollPopupIsOpen } = useContext(EnrollPopupCtx);
   return (
@@ -52,7 +53,7 @@ const Course = () => {
               <li
                 data-aos="fade-left"
                 data-aos-duration="900"
-                data-aos-delay={(index + 1) * 500}
+                data-aos-delay={(index + 1) * 400}
                 key={index}
                 className="flex items-center mb-12"
               >

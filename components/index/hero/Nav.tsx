@@ -24,7 +24,7 @@ const Nav = () => {
     },
     {
       name: "about",
-      display: "o nas",
+      display: "lekcje",
     },
     {
       name: "testimonials",
@@ -41,11 +41,11 @@ const Nav = () => {
   return (
     <nav className="flex min-h-[100px] h-full justify-between mx-5 pt-7 items-center">
       <img src="/logo1.png" alt="logo" />
-      <ul className="hidden lg:block">
+      <ul className="hidden lg:flex">
         {sections.map((section, index) => (
-          <a key={index} href={`#${section.name}`}>
-            <li className={`${btn} ${after} ml-[50px]`}>{section.display}</li>
-          </a>
+          <li key={index}>
+            <a href={`#${section.name}`} className={`${btn} ${after} ml-[50px]`}>{section.display}</a>
+          </li>
         ))}
       </ul>
       <ul
@@ -54,9 +54,8 @@ const Nav = () => {
         }`}
       >
         {sections.map((section, index) => (
-          <a
+          <li
             key={index}
-            href={`#${section.name}`}
             className="hover:bg-secondary text-center w-full transition-colors"
             onClick={() => {
               setIsOpen(false);
@@ -64,8 +63,8 @@ const Nav = () => {
                 "initial";
             }}
           >
-            <li className={`${btn} my-7`}>{section.display}</li>
-          </a>
+            <a href={`#${section.name}`} className={`${btn} w-full h-full py-7`}>{section.display}</a>
+          </li>
         ))}
       </ul>
       <button className={`p-4 relative z-30 lg:hidden`} onClick={menuHandler}>

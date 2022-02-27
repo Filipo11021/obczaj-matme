@@ -21,15 +21,15 @@ const ContactForm = () => {
       const {error} = await res.json()
       console.log(error)
       if(error){
-        setInfo("error");
+        setInfo(error);
       }else{
-        setInfo("wiadomosc zostala wyslana");
+        setInfo("wiadomość została wysłana");
       }
       console.log(error)
       
     } catch (error) {
       console.log(error)
-      setInfo("error");
+      setInfo('');
     }
   };
   return (
@@ -55,6 +55,20 @@ const ContactForm = () => {
           placeholder="Treść wiadomości"
         ></textarea>
       </div>
+      <div className="flex items-center mb-4">
+          <input
+            role="button"
+            type="checkbox"
+            className=" w-[20px] h-[20px] mr-3" 
+            required
+          />
+          <span>
+          Akceptuję{" "}
+            <a href="/regulamin.pdf" rel="noopener" target="_blank" className="text-decoration-2 font-bold">
+              regulamin
+            </a>
+          </span>
+        </div>
       <p>{info}</p>
       <button type="submit" className="main__btn mt-3 mx-auto">
         Wyślij

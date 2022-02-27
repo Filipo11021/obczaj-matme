@@ -14,23 +14,34 @@ const About = () => {
       <div className="about-trapezoid"></div>
       <div
         id="about"
-        className="grid relative  grid-cols-1 py-[100px] lg:grid-cols-2 justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4"
+        className="flex py-[100px] justify-center lg:justify-between items-center my-12 md:mx-8 lg:mx-[5vw] mx-4"
       >
-        <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center relative">
+        <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center basis-full lg:basis-1/2">
           <ul className="flex flex-col justify-evenly h-full">
             {foo.map((e, index) => (
-              <li key={index} className="flex items-center mb-12">
+              <li
+                data-aos="zoom-in-up"
+                data-aos-duration="900"
+                data-aos-delay={(index + 1) * 400}
+                key={index}
+                className="flex items-center mb-12"
+              >
                 <img src="like.svg" alt="" className="mr-4 my-4" />{" "}
                 <span className="text-2xl ">{e}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="m-auto">
-          <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[105%] text-right">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          className="m-auto grid justify-center basis-full lg:basis-1/2"
+        >
+          <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[115%] text-right">
             Zajęcia <br />{" "}
-            <span className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-full after:w-[1150%]">
-              indiwidualne
+            <span className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-[100%] after:w-[20000px]">
+              indywidualne
             </span>
           </h2>
           <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[700px] text-center">
@@ -40,9 +51,8 @@ const About = () => {
             </p>
             <p className="font-semibold">
               Zajęcia indywidualne to wspaniały sposób na przgotowania do
-              egzaminów. 100% uwagi prowadzącego skupione na tobie, tematy i
-              sposób nauczania dostosowane do twoich potrzeb, a to tylko jedne z
-              wielu zalet.
+              egzaminów. 100% uwagi prowadzącego skupione na tobie i sposób
+              nauczania dostosowany do ciebie. Czy może być lepiej?
             </p>
           </div>
           <button

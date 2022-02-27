@@ -1,4 +1,3 @@
-import { GetStaticProps } from "next";
 import { useState } from "react";
 import { TeamItem } from "types/team";
 
@@ -39,14 +38,14 @@ const Team = ({teamItems}:Props) => {
           <div></div>
           <div data-aos="fade-left" data-aos-duration="1000">
             <h2 className="text-[3rem] font-semibold">{currentTeamItem.name}</h2>
-            <p className="mt-2 mb-10 text- md:text-2xl">
-              {currentTeamItem.description}
+            <p className="mt-2 mb-10 text- md:text-2xl" dangerouslySetInnerHTML={{__html: currentTeamItem.description}}>
+
             </p>
           </div>
           <div className="flex items-end mb-10  lg:mb-0">
             {teamItems && teamItems.map((e, index) => (
-              <button key={index} onClick={() => setCurrentTeamItem(e)}>
-                <img className="w-[110px] mx-4" src={e.image.url} alt="" />
+              <button  key={index} onClick={() => setCurrentTeamItem(e)}>
+                <img  className="w-[110px] mx-4" src={e.image.url} alt={e.name} />
               </button>
             ))}
           </div>
