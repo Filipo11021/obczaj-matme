@@ -7,6 +7,10 @@
   @apply capitalize font-light text-2xl relative px-5 py-1 flex border-2 border-black;
 }
 
+html, body{
+  overflow-x: hidden !important;
+}
+
 .main__btn-decoration {
   @apply after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-decoration-1 after:z-[-1] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100;
 }

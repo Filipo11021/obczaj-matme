@@ -12,7 +12,7 @@ const Hero = () => {
 
     const {setEnrollPopupIsOpen} = useContext(EnrollPopupCtx)
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Nav />
       <div className="flex justify-center items-center flex-grow">
         <div className="max-w-[1123px] px-2 mb-[7rem]">
