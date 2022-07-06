@@ -1,14 +1,15 @@
 import { EnrollPopupCtx } from "pages";
+import { ModalContext } from "providers/ModalProvider";
 import { useContext } from "react";
+import ReactMarkdown from "react-markdown";
+import { ContentLessons } from "types/contentLessons";
 
-const About = () => {
-  const foo = [
-    "Wspaniały sposób na przygotowania do egzaminu",
-    "100% uwagi prowadzącego",
-    "Zajęcia dostowane do twoich potrzeb",
-    "Już od 100zł za godzinę zajęć",
-  ];
-  const { setEnrollPopupIsOpen } = useContext(EnrollPopupCtx);
+const About = ({
+  content: { enrollButton, description, elements, title },
+}: {
+  content: ContentLessons;
+}) => {
+  const { setEnrollPopupIsOpen } = useContext(ModalContext);
   return (
     <div className="relative">
       <div className="about-trapezoid"></div>
@@ -18,7 +19,7 @@ const About = () => {
       >
         <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center basis-full lg:basis-1/2">
           <ul className="flex flex-col justify-evenly h-full">
-            {foo.map((e, index) => (
+            {elements.map((e, index) => (
               <li
                 data-aos="zoom-in-up"
                 data-aos-duration="900"
@@ -38,28 +39,25 @@ const About = () => {
           data-aos-delay="300"
           className="m-auto grid justify-center basis-full lg:basis-1/2"
         >
-          <h2 className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[115%] text-right">
-            Zajęcia <br />{" "}
-            <span className="relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-[100%] after:w-[20000px]">
-              indywidualne
-            </span>
-          </h2>
+          <h2
+            dangerouslySetInnerHTML={{ __html: title }}
+            className="text-[3rem] mb-10  md:text-[5rem] xl:text-[6rem] leading-[115%] text-right"
+          ></h2>
+          
           <div className="text-[1.2rem] sm:text-[1.8rem] max-w-[700px] text-center">
-            <p className="mb-6">
-              Nauka w grupie nie jest dla ciebie? Chcesz żeby prowadzący skupiał
-              się wyłącznie na tobie? Mamy dla ciebie odpowiednie rozwiązanie.
-            </p>
-            <p className="font-semibold">
-              Zajęcia indywidualne to wspaniały sposób na przgotowania do
-              egzaminów. 100% uwagi prowadzącego skupione na tobie i sposób
-              nauczania dostosowany do ciebie. Czy może być lepiej?
-            </p>
+            <ReactMarkdown
+              components={{
+                p: ({ node, ...props }) => <p className="mb-6" {...props}></p>,
+              }}
+            >
+              {description}
+            </ReactMarkdown>
           </div>
           <button
-            className="main__btn mt-9 mx-auto"
+            className="main__btn mt-3 mx-auto"
             onClick={() => setEnrollPopupIsOpen(true)}
           >
-            zapisz się
+            {enrollButton}
           </button>
         </div>
       </div>

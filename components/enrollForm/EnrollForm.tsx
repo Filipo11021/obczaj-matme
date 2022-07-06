@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 import React from "react";
 import { formConfig } from "config/googleForm";
 import { EnrollPopupCtx } from "pages";
+import { ModalContext } from "providers/ModalProvider";
 
 const EnrollFormCtx = createContext({
   step: 1,
@@ -28,6 +29,7 @@ const data = Object.keys(formData).filter(key =>
       return obj;
   }, {}
 );
+const {modalContent} = useContext(ModalContext)
   const submitHandler = async () => {
     await fetch("/api/enroll", {
       method: "POST",
@@ -104,7 +106,7 @@ const data = Object.keys(formData).filter(key =>
         break;
     }
   };
-  const steps = ["rodzaj", "dane", "opis"];
+
   return (
     <EnrollFormCtx.Provider value={{ step, setStep }}>
       <div className="max-w-[1000px] w-full">
@@ -113,7 +115,7 @@ const data = Object.keys(formData).filter(key =>
             step == 4 && "hidden"
           }`}
         >
-          {steps.map((e, index) => (
+          {modalContent?.steps.map((e, index) => (
             <p
               key={index + 1}
               className={`${index + 1 === step && "text-primary"} capitalize`}
@@ -138,6 +140,7 @@ const NextBtn = ({
   customText?: string;
 }) => {
   const { setStep } = useContext(EnrollFormCtx);
+  const {modalContent} = useContext(ModalContext)
   return (
     <button
       onClick={() =>
@@ -148,13 +151,14 @@ const NextBtn = ({
       className="main__btn m-0 w-full md:w-auto justify-center"
       disabled={disabled}
     >
-      {disabled ? "Wypełnij wszystkie pola" : customText ? customText : "Dalej"}
+      {disabled ? modalContent?.errorButton : customText ? customText : modalContent?.nextButton}
     </button>
   );
 };
 
 const PrevBtn = () => {
   const { setStep } = useContext(EnrollFormCtx);
+  const {modalContent} = useContext(ModalContext)
   return (
     <button
       onClick={() =>
@@ -164,7 +168,7 @@ const PrevBtn = () => {
       }
       className="text-[20px] sm:text-[24px] main__btn m-0 w-full md:w-auto mb-3 md:mb-0 justify-center"
     >
-      wróć
+      {modalContent?.prevButton}
     </button>
   );
 };
@@ -176,13 +180,13 @@ const Step1 = ({
   handleInputData: any;
   option: "lekcje" | "kurs";
 }) => {
+  const {modalContent} = useContext(ModalContext)
   return (
     <div className="px-7 py-5">
       <div>
-        <h2 className="enroll__form__title">Co Cię interesuje?</h2>
+        <h2 className="enroll__form__title">{modalContent?.typeOfService.title}</h2>
         <p className="enroll__form__description">
-          Kurs ósmoklasisty czy zajęcia indywidualne? Wybierz z poniższej listy
-          co cię interesuje aby przejść dalej.
+          {modalContent?.typeOfService.description}
         </p>
       </div>
       <div className="flex justify-center">
@@ -193,7 +197,7 @@ const Step1 = ({
             }`}
             onClick={() => handleInputData("option", "kurs")}
           >
-            Kurs ósmoklasity
+            {modalContent?.typeOfService.courseOption}
           </button>
           <button
             className={`enroll__btn w-full my-12 justify-center ${
@@ -201,7 +205,7 @@ const Step1 = ({
             }`}
             onClick={() => handleInputData("option", "lekcje")}
           >
-            Lekcje indywidualne
+            {modalContent?.typeOfService.lessonsOption}
           </button>
         </div>
       </div>
@@ -226,29 +230,30 @@ const Step2 = ({
   const checkEmail = !Joi.string()
     .email({ tlds: { allow: false } })
     .validate(email).error;
+    const {modalContent} = useContext(ModalContext)
   const fields = [
     {
       name: "firstName",
-      display: "Imię",
+      display: modalContent?.contactDetails.firstNameInput ?? "Imię",
       value: firstName,
     },
     {
       name: "lastName",
-      display: "Nazwisko",
+      display: modalContent?.contactDetails.lastNameInput ?? "Nazwisko",
       value: lastName,
     },
     {
       name: "email",
-      display: "E-mail",
+      display: modalContent?.contactDetails.emailInput ?? "E-mail",
       value: email,
     },
   ];
-
+  
   return (
     <div className="px-7 py-5">
-      <h2 className="enroll__form__title">Dane kontaktowe</h2>
+      <h2 className="enroll__form__title">{modalContent?.contactDetails.title}</h2>
       <p className="enroll__form__description">
-        Podaj dane kontaktowe, aby otrzymać więcej informacji.
+        {modalContent?.contactDetails.description}
       </p>
       <div className="max-w-[600px]">
         {fields.map((field, index) => (
@@ -288,18 +293,18 @@ const Step3 = ({
   checkbox: boolean;
   submitHandler: () => Promise<void>;
 }) => {
+  const {modalContent} = useContext(ModalContext)
   return (
     <div className="px-7 py-5">
-      <h2 className="enroll__form__title">Masz jakieś pytanie?</h2>
+      <h2 className="enroll__form__title">{modalContent?.additionalDescription.title}</h2>
       <p className="enroll__form__description">
-        Nie bój się go zadać! Opisz swoje wątpliwości w poniższym oknie, a w
-        najbliższym czasie skontaktujemy się z tobą, aby ci pomóc!
+       {modalContent?.additionalDescription.description}
       </p>
       <div className=" mx-auto">
         <textarea
           value={questions}
           className="w-full min-h-[300px] border border-black flex p-2 my-5 resize-none font-light text-[1.5rem]"
-          placeholder="Pytania"
+          placeholder={modalContent?.additionalDescription.questionsInput ?? "Pytania"}
           onChange={handleInputData("questions")}
         ></textarea>
         <div className="flex items-center mb-4">

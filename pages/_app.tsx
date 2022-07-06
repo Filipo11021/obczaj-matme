@@ -2,8 +2,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
+import ModalProvider, { ModalContext } from "providers/ModalProvider";
+import Modal from "components/Modal";
+import EnrollForm from "components/enrollForm/EnrollForm";
+import EnrollModal from "components/enrollForm/EnrollModal";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
     AOS.refresh();
   }, []);
+  
   return (
     <>
       <Head>
@@ -24,7 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Obczaj Matme to skuteczne kursy i korepetycje z matematyki. Kompleksowe  egzaminu ósmoklasisty z wspaniale przygotowanym i zaangażowanym prowadzącym."
         ></meta>
       </Head>
-      <Component {...pageProps} />
+      <ModalProvider>
+        <Component {...pageProps} />
+        <EnrollModal />
+      </ModalProvider>
     </>
   );
 }

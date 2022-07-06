@@ -1,4 +1,5 @@
 import { EnrollPopupCtx } from "pages";
+import { ModalContext } from "providers/ModalProvider";
 import { useContext } from "react";
 import Nav from "./Nav";
 
@@ -10,7 +11,7 @@ const Hero = () => {
   const after =
     "after:w-full after:h-full after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-secondary after:-z-10 after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100";
 
-    const {setEnrollPopupIsOpen} = useContext(EnrollPopupCtx)
+    const {setEnrollPopupIsOpen} = useContext(ModalContext)
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Nav />

@@ -4,10 +4,10 @@
 @tailwind utilities;
 
 .main__btn-base {
-  @apply capitalize font-light text-2xl relative px-5 py-1 flex border-2 border-black;
+  @apply font-light text-2xl relative px-5 py-1 flex border-2 border-black;
 }
 
-html, body{
+html, body {
   overflow-x: hidden !important;
 }
 
@@ -32,7 +32,7 @@ html, body{
 }
 
 .enroll__btn {
-  @apply capitalize font-light text-[25px] lg:text-[40px] relative px-5 py-1 mx-auto flex border-2 border-black main__btn-decoration;
+  @apply font-light text-[25px] lg:text-[40px] relative px-5 py-1 mx-auto flex border-2 border-black main__btn-decoration;
 }
 
 .slick-track {
@@ -145,7 +145,13 @@ html {
   animation-delay: 1.5s;
 }
 
+.courseTitleDecoration {
+  @apply relative after:h-[50%] after:w-[90%] after:absolute after:block after:right-0 after:top-1/2 after:-z-10 after:bg-secondary;
+}
 
+.lessonsTitleDecoration {
+  @apply relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-[100%] after:w-[20000px];
+}
 
 @keyframes zoomIn {
   from {
