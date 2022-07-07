@@ -38,10 +38,10 @@ const Course = ({
             </ReactMarkdown>
           </div>
          
-          <div className="flex justify-evenly mt-6">
+          <div className="flex justify-evenly items-center mt-6 flex-col-reverse sm:flex-row">
           <Link href='/kurs'>
            <a
-              className="main__btn mt-3 mx-5"
+              className="main__btn mt-6 sm:mt-3 mx-5"
             >
               {seeMoreButton}
             </a>
