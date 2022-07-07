@@ -58,7 +58,7 @@ export default async function handler(
       to: email,
       subject: "Dziękujemy za kontakt",
       text: confirmation,
-      from:`Obczaj Matme <${process.env.EMAIL_USER}`
+      from:`Obczaj Matme <${process.env.EMAIL_USER}>`
     });
     res.json({ sent: "true" });
     return;
