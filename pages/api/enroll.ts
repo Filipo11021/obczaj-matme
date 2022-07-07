@@ -58,6 +58,7 @@ export default async function handler(
       to: email,
       subject: "Dziękujemy za kontakt",
       text: confirmation,
+      from: "Obczaj Matme"
     });
     res.json({ sent: "true" });
     return;
