@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EnrollPopupCtx } from "pages";
 import { ModalContext } from "providers/ModalProvider";
 import { useContext } from "react";
@@ -37,19 +38,22 @@ const Course = ({
             </ReactMarkdown>
           </div>
          
-          <div className="flex justify-center">
+          <div className="flex justify-evenly mt-6">
+          <Link href='/kurs'>
+           <a
+              className="main__btn mt-3 mx-5"
+            >
+              {seeMoreButton}
+            </a>
+           </Link>
           <button
-            className="main__btn mt-3 mx-5"
+            className="main__btn-base seeMoreBtn mt-3 mx-5"
             onClick={() => setEnrollPopupIsOpen(true)}
           >
             {enrollButton}
           </button>
-            {/* <button
-              className="main__btn mt-3 mx-5"
-              onClick={() => setEnrollPopupIsOpen(true)}
-            >
-              {enrollButton}
-            </button> */}
+            {" "}
+           
           </div>
         </div>
         <div className="lg:flex lg:ml-10 hidden h-full justify-center items-center basis-full lg:basis-1/2">
@@ -58,7 +62,7 @@ const Course = ({
               <li
                 data-aos="fade-left"
                 data-aos-duration="900"
-                data-aos-delay={(index + 1) * 400}
+                data-aos-delay={(index + 1) * 300}
                 key={index}
                 className="flex items-center mb-12"
               >

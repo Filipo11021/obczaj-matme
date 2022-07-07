@@ -23,6 +23,7 @@ type Props = {
   contentLessons: ContentLessons;
   contentCourse: ContentCourse;
   contentModal: ModalContent;
+  termsOfServiceUrl: string;
 };
 export const EnrollPopupCtx = createContext({
   setEnrollPopupIsOpen: (() => {}) as unknown as React.Dispatch<
@@ -36,11 +37,13 @@ const Home: NextPage<Props> = ({
   contentCourse,
   contentLessons,
   contentModal,
+  termsOfServiceUrl
 }) => {
-  const { setModalContent } = useContext(ModalContext);
+  const { setModalContent, setTermsOfServiceUrl } = useContext(ModalContext);
 
   useEffect(() => {
     setModalContent(contentModal);
+    setTermsOfServiceUrl(termsOfServiceUrl)
   }, []);
 
   return (
@@ -63,6 +66,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const contentLessons = await getLessonsContent();
   const contentCourse = await getCourseContent();
   const contentModal = await getModalContent();
+  const TermsOfServiceContent = await getTermsOfServiceContent()
 
   return {
     props: {
@@ -71,6 +75,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       contentLessons: contentLessons.data.lessons[0],
       contentCourse: contentCourse.data.courses[0],
       contentModal: contentModal.data.modals[0],
+      termsOfServiceUrl: TermsOfServiceContent.data.termsOfService[0].file.url as string
     },
   };
 };
@@ -116,7 +121,7 @@ async function getLessonsContent() {
   return lessonsContent;
 }
 
-async function getModalContent() {
+export async function getModalContent() {
   const modalContent: ModalContentResponse = await fetchGraphcms(`modals {
     steps
     nextButton
@@ -142,5 +147,15 @@ async function getModalContent() {
     }
   }`);
   return modalContent;
+}
+
+export async function getTermsOfServiceContent() {
+const content = await fetchGraphcms(`termsOfService {
+  file {
+    url
+  }
+}`)
+
+return content
 }
 export default Home;

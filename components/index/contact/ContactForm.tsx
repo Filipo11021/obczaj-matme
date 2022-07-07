@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
+import { ModalContext } from "providers/ModalProvider";
+import React, { useContext, useRef, useState } from "react";
 
 const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [info, setInfo] = useState("");
+  const { termsOfServiceUrl } = useContext(ModalContext);
 
   const submitHandler = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -18,18 +20,17 @@ const ContactForm = () => {
           text: data.get("text"),
         }),
       });
-      const {error} = await res.json()
-      console.log(error)
-      if(error){
+      const { error } = await res.json();
+      console.log(error);
+      if (error) {
         setInfo(error);
-      }else{
+      } else {
         setInfo("Wiadomość została wysłana");
       }
-      console.log(error)
-      
+      console.log(error);
     } catch (error) {
-      console.log(error)
-      setInfo('');
+      console.log(error);
+      setInfo("");
     }
   };
   return (
@@ -56,19 +57,24 @@ const ContactForm = () => {
         ></textarea>
       </div>
       <div className="flex items-center mb-4">
-          <input
-            role="button"
-            type="checkbox"
-            className=" w-[20px] h-[20px] mr-3" 
-            required
-          />
-          <span>
+        <input
+          role="button"
+          type="checkbox"
+          className=" w-[20px] h-[20px] mr-3"
+          required
+        />
+        <span>
           Akceptuję{" "}
-            <a href="/regulamin.pdf" rel="noopener" target="_blank" className="text-decoration-2 font-bold">
-              regulamin
-            </a>
-          </span>
-        </div>
+          <a
+            href={termsOfServiceUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-decoration-2 font-bold"
+          >
+            regulamin
+          </a>
+        </span>
+      </div>
       <p>{info}</p>
       <button type="submit" className="main__btn mt-3 mx-auto">
         Wyślij

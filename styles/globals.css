@@ -7,7 +7,8 @@
   @apply font-light text-2xl relative px-5 py-1 flex border-2 border-black;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden !important;
 }
 
@@ -24,7 +25,7 @@ html, body {
 }
 
 .main__btn-decoration--base {
-  @apply w-full h-full absolute left-[.35rem] top-[.4rem] bg-decoration-1 -z-10 opacity-0 after:transition-opacity after:duration-500;
+  @apply w-full h-full absolute left-[.35rem] top-[.4rem] -z-10 bg-decoration-1 after:transition-opacity after:duration-500;
 }
 
 .main__btn {
@@ -33,6 +34,15 @@ html, body {
 
 .enroll__btn {
   @apply font-light text-[25px] lg:text-[40px] relative px-5 py-1 mx-auto flex border-2 border-black main__btn-decoration;
+}
+
+.reverse-btn {
+  @apply after:w-full lg:text-[30px] after:transition-all lg:px-14 lg:py-3 hover:after:top-0 hover:after:left-0 after:h-full after:absolute after:left-[.40rem] lg:after:left-[.55rem] after:top-[.40rem] after:bg-decoration-1 after:z-[-1] after:duration-500 ;
+
+}
+
+.seeMoreBtn {
+  @apply after:w-full after:h-full after:transition-all hover:after:top-0 hover:after:left-0 after:absolute after:left-[.35rem] after:top-[.4rem] after:bg-decoration-1 after:z-[-1] after:duration-500;
 }
 
 .slick-track {
@@ -136,7 +146,6 @@ html {
 
 .zoomIn {
   animation: zoomIn 1.5s forwards, addOverflow 0.5s forwards 2s;
-
 }
 
 .zoomIn > .background {
@@ -148,6 +157,8 @@ html {
 .courseTitleDecoration {
   @apply relative after:h-[50%] after:w-[90%] after:absolute after:block after:right-0 after:top-1/2 after:-z-10 after:bg-secondary;
 }
+
+
 
 .lessonsTitleDecoration {
   @apply relative after:absolute after:-z-10 figure after:bg-secondary after:-left-8 after:top-0 after:h-[100%] after:w-[20000px];
@@ -166,11 +177,10 @@ html {
   from {
     overflow-y: hidden;
   }
-  to{
+  to {
     overflow-y: scroll;
   }
 }
-
 
 @keyframes popupBackground {
   from {
@@ -179,4 +189,12 @@ html {
   to {
     background-color: black;
   }
+}
+
+.titleDecoration {
+  @apply relative px-4 inline-block;
+}
+
+.vectorCourse {
+  @apply w-full h-full absolute -z-10 top-0 left-0;
 }

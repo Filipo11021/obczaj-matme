@@ -23,7 +23,7 @@ const About = ({
               <li
                 data-aos="zoom-in-up"
                 data-aos-duration="900"
-                data-aos-delay={(index + 1) * 400}
+                data-aos-delay={(index + 1) * 300}
                 key={index}
                 className="flex items-center mb-12"
               >

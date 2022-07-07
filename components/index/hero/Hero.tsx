@@ -39,7 +39,7 @@ const Hero = () => {
               data-aos="fade-right"
               data-aos-duration="600"
             >
-              <button className={`main__btn`} onClick={() => setEnrollPopupIsOpen(true)}>zapisz się</button>
+              <button className={`main__btn`} onClick={() => setEnrollPopupIsOpen(true)}>Zapisz się</button>
             </div>
           </div>
         </div>

@@ -293,7 +293,7 @@ const Step3 = ({
   checkbox: boolean;
   submitHandler: () => Promise<void>;
 }) => {
-  const {modalContent} = useContext(ModalContext)
+  const {modalContent, termsOfServiceUrl} = useContext(ModalContext)
   return (
     <div className="px-7 py-5">
       <h2 className="enroll__form__title">{modalContent?.additionalDescription.title}</h2>
@@ -318,8 +318,8 @@ const Step3 = ({
           <span>
           Akceptuję{" "}
             <a
-              href="/regulamin.pdf"
-              rel="noopener"
+              href={termsOfServiceUrl}
+              rel="noopener noreferrer"
               target="_blank"
               className="text-decoration-2 font-bold"
             >

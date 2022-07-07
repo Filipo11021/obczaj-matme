@@ -10,6 +10,8 @@ type ModalContextType = {
     React.SetStateAction<ModalContent | undefined>
   >;
   modalContent: ModalContent | undefined;
+  termsOfServiceUrl: string;
+  setTermsOfServiceUrl: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const ModalContext = createContext<ModalContextType>({
@@ -17,10 +19,13 @@ export const ModalContext = createContext<ModalContextType>({
   enrollPopupIsOpen: false,
   modalContent: undefined,
   setModalContent: () => {},
+  termsOfServiceUrl: "",
+  setTermsOfServiceUrl: () => {},
 });
 export const ModalProvider: React.FC = ({ children }) => {
   const [enrollPopupIsOpen, setEnrollPopupIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ModalContent>();
+  const [termsOfServiceUrl, setTermsOfServiceUrl] = useState("");
 
   useEffect(() => {
     const html = document.querySelector<HTMLElement>("html")!;
@@ -38,6 +43,8 @@ export const ModalProvider: React.FC = ({ children }) => {
         enrollPopupIsOpen,
         modalContent,
         setModalContent,
+        termsOfServiceUrl,
+        setTermsOfServiceUrl,
       }}
     >
       {children}
