@@ -40,7 +40,7 @@ export default async function handler(
       to: email,
       subject: "Dziękujemy za kontakt",
       html: confirmation,
-      from: "Obczaj Matme",
+      from: `Obczaj Matme <${process.env.EMAIL_USER}`,
     });
 
     res.json({ sent: "true" });
